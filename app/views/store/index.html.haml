@@ -1,6 +1,9 @@
 - if notice
   %p#notice= notice
 
+- if @visit_count > 5
+  #visit_count= "You have #{pluralize(@visit_count, 'visit')}"
+
 %h1 Your Pragmatic Catalog
 
 - cache ['store', Product.latest] do

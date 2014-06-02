@@ -3,6 +3,7 @@ class LineItemsController < ApplicationController
 
   before_action :set_cart, only: [:create]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  after_action :reset_visits_count, only: [:create]
 
   # GET /line_items
   # GET /line_items.json
@@ -74,5 +75,9 @@ class LineItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
       params.require(:line_item).permit(:product_id, :cart_id)
+    end
+
+    def reset_visits_count
+      session[:visit_count] = 0
     end
 end
