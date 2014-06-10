@@ -2,16 +2,16 @@
 
 one:
   id: 1
-  title: MyString
+  title: MyLongTitleName
   description: MyText
-  image_url: MyString
+  image_url: one.jpg
   price: 9.99
 
 two:
   id: 2
-  title: MyString
+  title: MyLongTitleName
   description: MyText
-  image_url: MyString
+  image_url: two.jpg
   price: 9.99
 
 ruby:
