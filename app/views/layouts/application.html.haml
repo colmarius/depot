@@ -8,7 +8,8 @@
 
 %body{class: "#{controller.controller_name}"}
   #banner
-    = image_tag("logo.png")
+    %a{href: store_path}
+      = image_tag("logo.png")
     = @page_title || "Pragmatic Bookshelf"
 
   #columns
