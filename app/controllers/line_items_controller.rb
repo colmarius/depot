@@ -65,6 +65,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to cart_url(@cart), notice: message }
+      format.js
       format.json { head :no_content }
     end
   end

@@ -4,5 +4,5 @@
     \&times
   %td= line_item.product.title
   %td
-    = button_to '&times;'.html_safe, line_item, method: :delete, class: 'remove_item', data: {confirm: 'Are you sure?'}
+    = button_to '&times;'.html_safe, line_item, method: :delete, remote: true,  class: 'remove_item', data: {confirm: 'Are you sure?'}
   %td.item_price= number_to_currency(line_item.total_price)
