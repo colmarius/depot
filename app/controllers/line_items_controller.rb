@@ -61,7 +61,7 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1.json
   def destroy
     message = "Item '#{@line_item.product.title}' was removed from cart."
-    @line_item.destroy if @line_item.cart.id == @cart.id
+    @line_item.decrement_quantity if @line_item.cart.id == @cart.id
 
     respond_to do |format|
       format.html { redirect_to cart_url(@cart), notice: message }
