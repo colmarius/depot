@@ -30,3 +30,8 @@
       #loaded_at= Time.now
     #main
       = yield
+
+    :javascript
+      $(document).on("ready page:change", function() {
+        #{yield :page_javascript}
+      });
