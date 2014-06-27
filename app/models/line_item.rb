@@ -5,7 +5,10 @@ class LineItem < ActiveRecord::Base
 
   def decrement_quantity
     if quantity > 1
-      update_attribute(:quantity, quantity - 1)
+      update_attributes({
+        quantity: quantity - 1,
+        total_price: total_price - product.price
+      })
     else
       destroy
     end
